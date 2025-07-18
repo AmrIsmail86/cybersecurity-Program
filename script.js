@@ -1,4 +1,9 @@
-function toggleMenu() {
-  const nav = document.getElementById("navbar");
-  nav.classList.toggle("show");
-}
+// Smooth scroll navigation
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
